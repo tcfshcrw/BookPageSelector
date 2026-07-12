@@ -1,9 +1,7 @@
-const CACHE_NAME = 'book-page-selector-v26.28.07';
+const CACHE_NAME = 'book-page-selector-v26.28.07-single';
 const urlsToCache = [
   './',
   './index.html',
-  './index.css',
-  './app.js',
   './manifest.json'
 ];
 
