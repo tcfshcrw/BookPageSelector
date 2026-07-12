@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Page Selector</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+    <!-- Google Fonts for typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>📚 Page Selector</h1>
+            <p>Pick your next adventure</p>
+        </header>
+
+        <main>
+            <div class="glass-card result-container">
+                <div class="page-display" id="pageDisplay">--</div>
+                <div class="result-label" id="resultLabel">Ready to read?</div>
+                <button id="pickPageBtn" class="primary-btn pulse-anim" disabled>Pick Page</button>
+            </div>
+
+            <div class="glass-card controls-container">
+                <h2>Manage Books</h2>
+                <div class="select-wrapper">
+                    <select id="bookSelect" aria-label="Select a book">
+                        <option value="" disabled selected>Select a book...</option>
+                    </select>
+                </div>
+                
+                <form id="bookForm" class="book-form">
+                    <input type="hidden" id="bookId">
+                    <div class="input-group">
+                        <input type="text" id="bookName" placeholder="Book Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="bookPages" placeholder="Total Pages" min="1" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="saveBookBtn" class="action-btn">Save Book</button>
+                        <button type="button" id="cancelEditBtn" class="action-btn secondary hidden">Cancel</button>
+                        <button type="button" id="deleteBookBtn" class="action-btn danger hidden">Delete</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="glass-card data-container">
+                <h2>Data Options</h2>
+                <div class="data-actions">
+                    <button id="exportBtn" class="data-btn">📤 Export JSON</button>
+                    <label for="importFile" class="data-btn import-label">📥 Import JSON</label>
+                    <input type="file" id="importFile" accept=".json" class="hidden">
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Book Page Selector PWA</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">Notification message</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
